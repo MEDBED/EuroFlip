@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {ExchangeConverterComponent} from './exchange-converter/exchange-converter.component';
+import {MainFooterComponent} from './shared/components/main-footer/main-footer.component';
+import {MainHeaderComponent} from './shared/components/main-header/main-header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [ExchangeConverterComponent, MainFooterComponent,MainHeaderComponent],
+  standalone:true,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'test';
+  title = 'euro-usd-converter';
 }

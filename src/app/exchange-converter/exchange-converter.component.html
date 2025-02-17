@@ -1,0 +1,59 @@
+<div class="converter" [formGroup]="converterForm">
+  <div class="header">
+    <h2 class="label">EUR/USD Exchange Converter</h2>
+    <mat-slide-toggle formControlName="isUsdMode">
+      {{ converterForm.get('isUsdMode')?.value ? 'USD -> EUR' : 'EUR -> USD' }}
+    </mat-slide-toggle>
+  </div>
+
+  <div class="input-area">
+    <mat-form-field appearance="outline">
+      <input matInput type="number" step="0.01" formControlName="amount"
+             [placeholder]="converterForm.get('isUsdMode')?.value ? 'Amount in USD' : 'Amount in EUR'" />
+      <mat-error *ngIf="converterForm.get('amount')?.hasError('required')">Amount is required</mat-error>
+      <mat-error *ngIf="converterForm.get('amount')?.hasError('pattern')">Please enter a valid number</mat-error>
+      <mat-error *ngIf="converterForm.get('amount')?.hasError('min')">Value must be greater than 0</mat-error>
+    </mat-form-field>
+
+    <div class="converted-value">
+      <label class="label"><strong>Last converted Value: </strong></label>
+      <strong class="amount">{{ convertedAmount() | currency:(converterForm.get('isUsdMode')?.value ? 'EUR' : 'USD') }}</strong>
+    </div>
+  </div>
+
+  <div class="rate-controls">
+    <div class="fixed-rate-area">  <div *ngIf="!isSettingFixedRate">
+      <button mat-raised-button color="primary" (click)="isSettingFixedRate = true">Set Fixed Rate</button>
+    </div>
+      <div *ngIf="isSettingFixedRate" class="fixed-rate-input">
+        <mat-form-field appearance="outline">
+          <input matInput type="number" step="0.01" formControlName="fixedRate" placeholder="Set Fixed Rate"
+                 (keyup.enter)="confirmFixedRate()" />
+          <mat-error *ngIf="converterForm.get('fixedRate')?.hasError('pattern')">Please enter a valid number</mat-error>
+          <mat-error *ngIf="converterForm.get('fixedRate')?.hasError('min')">Please enter a valid fixed rate</mat-error>
+        </mat-form-field>
+      </div>
+      <button mat-raised-button color="warn" (click)="resetRate()">Reset Rate</button>
+    </div>
+  </div>
+
+  <div class="conversion-history">
+    <h3 class="label">Conversion History</h3>
+    <table>
+      <thead>
+      <tr>
+        <th>Rate</th>
+        <th>Input</th>
+        <th>Output</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let entry of history$ | async; trackBy: trackById">
+        <td>{{ entry.rate?.toFixed(2) }}</td>
+        <td>{{ entry.input }} {{ entry.inputCurrency }}</td>
+        <td>{{ entry.output?.toFixed(2) }} {{ entry.outputCurrency }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

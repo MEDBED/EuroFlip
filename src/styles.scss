@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.row {
+  display: flex;            /* Enable flex layout */
+  flex-wrap: wrap;          /* Allow wrapping for smaller screens */
+  margin-right: -15px;      /* Negative margins to balance .col padding */
+  margin-left: -15px;
+}
+
+.col {
+  flex: 1;                  /* Each .col takes equal space by default */
+  padding-right: 15px;      /* Internal padding */
+  padding-left: 15px;
+  box-sizing: border-box;   /* Ensure padding doesn't overflow */
+}
+
+/* Optional: adjust columns on small screens */
+@media (max-width: 576px) {
+  .col {
+    flex: 0 0 100%;         /* Each column takes full width on very small screens */
+    margin-bottom: 1rem;    /* Add spacing below each column */
+  }
+}

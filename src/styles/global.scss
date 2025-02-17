@@ -1,0 +1,20 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+body {
+  background-color: $bg-light;
+}
+// Apply CA theme to buttons
+.btn-primary {
+  background-color: $btn-primary-bg;
+  color: $btn-primary-text;
+  border-radius: $border-radius-medium;
+  padding: $spacing-sm $spacing-md;
+  box-shadow: $box-shadow-light;
+  transition: $transition-normal;
+
+  &:hover {
+    background-color: darken($btn-primary-bg, 10%);
+    box-shadow: $box-shadow-dark;
+  }
+}

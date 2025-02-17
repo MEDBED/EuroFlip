@@ -1,0 +1,75 @@
+//  Primary Brand Colors (from CA official palette)
+$ca-primary-green: #008542; // Main green color
+$ca-secondary-blue: #0055A4; // Secondary blue color
+$ca-dark-blue: rgb(0, 116, 97); // Dark blue used in branding
+$ca-light-blue: #60A3D9; // Lighter blue for accents
+$ca-accent-red: #E2001A; // Accent red (used sparingly)
+$ca-light-grey: #F5F5F5; // Backgrounds and light areas
+$ca-dark-grey: #4A4A4A; // Text and dark areas
+$ca-white: #FFFFFF; // Pure white for contrast
+$light-ca: rgba(0, 0, 0, 0);
+$ca-light-green:rgb(0, 70, 82);
+//  Background Colors
+$bg-primary: $ca-primary-green;
+$bg-secondary: $ca-light-grey;
+$bg-dark: $ca-dark-blue;
+$bg-light: $ca-white;
+$bg-light-ca: $light-ca;
+
+//  Text Colors
+$text-primary: $ca-dark-grey;
+$text-secondary: $ca-dark-blue;
+$text-light: $ca-white;
+$text-green:$ca-light-green;
+
+
+//  Button Colors
+$btn-primary-bg: $ca-primary-green;
+$btn-primary-text: $ca-white;
+$btn-secondary-bg: $ca-light-blue;
+$btn-secondary-text: $ca-dark-grey;
+$btn-danger-bg: $ca-accent-red;
+$btn-danger-text: $ca-white;
+
+//  Border Colors
+$border-primary: $ca-primary-green;
+$border-secondary: $ca-dark-blue;
+$border-light: $ca-light-grey;
+
+//  Box Shadows (for depth)
+$box-shadow-light: 0px 2px 4px rgba(0, 0, 0, 0.1);
+$box-shadow-medium: 0px 4px 6px rgba(0, 0, 0, 0.15);
+$box-shadow-dark: 0px 6px 8px rgba(0, 0, 0, 0.2);
+
+//  Font Sizes
+$font-size-small: 12px;
+$font-size-base: 14px;
+$font-size-large: 18px;
+$font-size-xlarge: 24px;
+
+//  Border Radius (Rounded Corners)
+$border-radius-small: 4px;
+$border-radius-medium: 8px;
+$border-radius-large: 12px;
+
+//  Spacing Variables
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+//  Transitions (For smooth UI effects)
+$transition-fast: 0.2s ease-in-out;
+$transition-normal: 0.3s ease-in-out;
+$transition-slow: 0.5s ease-in-out;
+
+$ca-dark-blue: #001f3f; // Example dark blue
+$ca-light-blue: #2196f3; // Example light blue
+$ca-accent-color: #f44336; // Example red accent color (or any color you choose)
+$text-light: #ffffff; //Example white text color
+$spacing-xs: 4px; //Example spacing
+$spacing-md: 8px; //Example spacing
+$border-radius-medium: 8px; //Example border radius
+$font-size-large: 18px; //Example font size
+$transition-fast: 0.2s ease-in-out; //Example transition speed

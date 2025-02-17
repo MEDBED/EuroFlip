@@ -1,0 +1,10 @@
+@import "variables";
+
+
+// ===================== CONTENT =====================
+.main-content {
+  padding-top: calc($spacing-lg + 40px);  // Account for fixed header height
+  padding-bottom: $spacing-lg;  // Space for footer
+  height: calc(100vh - #{$spacing-lg * 2} - 50px);  // Full height minus header & footer space
+  overflow-y: auto;  // Make content scrollable
+}

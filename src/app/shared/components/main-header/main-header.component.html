@@ -1,0 +1,16 @@
+<header class="euro-flip-main-header">
+  <div class="app-logo">
+    <img ngSrc="assets/logo-CA.svg" width="50" height="50" alt="App Logo"/>
+    <h1>EuroFlip</h1>
+  </div>
+  <div class="current-rate-container">
+    <div class="current-rate">
+      <i class="fas fa-chart-line"></i>
+      <span>Current Rate:
+        <span class="rate-value">
+          {{ (fixedRate$|async) !== null ? (fixedRate$|async)?.toFixed(2) : (exchangeRate$ | async)?.toFixed(2) }}
+        </span>
+      </span>
+    </div>
+  </div>
+</header>

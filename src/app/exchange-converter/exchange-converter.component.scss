@@ -1,0 +1,138 @@
+@import "variables";
+
+.converter {
+  max-width: 600px; /* Adjust as needed */
+  margin: 20px auto; /* Center the converter */
+  padding: 20px;
+  background-color: $ca-white; /* White container background */
+  border-radius: $border-radius-medium;
+  box-shadow: $box-shadow-light; /* Subtle shadow */
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-sm;
+
+    h2 {
+      color: $text-secondary; /* Dark blue title */
+      font-size: $font-size-large;
+    }
+
+    .mat-slide-toggle {
+      /* Style the slide toggle if needed */
+    }
+  }
+
+  .input-area {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+
+    .mat-form-field {
+      width: 100%; /* Ensure input fills container */
+    }
+
+    .converted-value {
+      font-size: $font-size-base;
+      color: $text-secondary;
+      margin-bottom: 15px;
+
+      .lastInputLabel { /* Style the label text */
+        color: $text-primary;
+        margin-right: $spacing-xs;
+      }
+
+      .amount { /* Style the amount value */
+        font-weight: bold;
+      }
+    }
+  }
+
+  .rate-controls {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+
+    .fixed-rate-area {
+      display: flex;
+      align-items: center;
+      gap: $spacing-sm;
+
+      .mat-raised-button {
+        &.set-fixed-rate-button {
+          background-color: $btn-primary-bg;
+          color: $btn-primary-text;
+          border-radius: $border-radius-small;
+
+          &:hover {
+            background-color: darken($btn-primary-bg, 10%);
+          }
+        }
+
+        &.reset-rate-button {
+          background-color: $btn-danger-bg;
+          color: $btn-danger-text;
+          border-radius: $border-radius-small;
+
+          &:hover {
+            background-color: darken($btn-danger-bg, 10%);
+          }
+        }
+      }
+    }
+  }
+
+  .conversion-history {
+    margin-top: $spacing-lg;
+
+    h3 {
+      color: $text-secondary;
+      font-size: $font-size-base;
+      margin-bottom: $spacing-sm;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid $border-light; /* Light border for the table */
+      border-radius: $border-radius-small;
+      overflow: hidden; /* Hide rounded corners overflow */
+
+      thead {
+        background-color: $ca-light-green; /* Light blue header */
+        color: $text-light;
+        font-weight: bold;
+      }
+
+      th,
+      td {
+        padding: $spacing-sm;
+        text-align: left;
+        border-bottom: 1px solid $border-light;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: $ca-light-grey; /* Light gray for even rows */
+      }
+    }
+  }
+
+  /* Responsive adjustments (example) */
+  @media (max-width: 500px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $spacing-sm;
+    }
+
+    .fixed-rate-area {
+      flex-direction: column;
+      align-items: stretch; /* Make buttons full width */
+      gap: $spacing-sm;
+    }
+  }
+}

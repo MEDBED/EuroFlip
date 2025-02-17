@@ -1,0 +1,17 @@
+@import "variables";
+
+// ===================== FOOTER =====================
+.euro-flip-main-footer {
+  position: fixed;  // Stick the footer to the bottom
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: $bg-secondary;
+  color: $text-primary;
+  text-align: center;
+  padding: $spacing-md $spacing-lg;
+  font-size: $font-size-base;
+  border-top: 2px solid $border-primary;
+  box-shadow: $box-shadow-light;
+  z-index: 999;  // Ensure it stays on top of content
+}
